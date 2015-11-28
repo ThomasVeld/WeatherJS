@@ -1,0 +1,28 @@
+{
+  "name": "weather-js",
+  "version": "1.0.0",
+  "description": "WeatherJS is a jquery plugin for weather based webdesigns",
+  "dependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasVeld/WeatherJS.git"
+  },
+  "keywords": [
+    "weather",
+    "jquery",
+    "node"
+  ],
+  "author": "Wessel van der Pal. Thomas in het Veld",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThomasVeld/WeatherJS/issues"
+  },
+  "homepage": "https://github.com/ThomasVeld/WeatherJS#readme"
+}
