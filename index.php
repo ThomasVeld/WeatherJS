@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>WeatherJS</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,14 +20,26 @@
   </head>
   <body>
    <div class="main col-md-12">
+		<div class="develop-buttons">
+			<button class="show-sunny">Sunny</button>
+			<button class="show-snow">Snow</button>
+			<button class="show-clouds">Cloudy</button>
+		</div>
 		<div class="screen spring">
-			<img src="img/spring.png" />
+			<img src="img/sunny.png" class="floating" />
+			<div class="sun"></div>
+			
+			<!-- if cloudy weather is true -->
+			<div class="cloudy-weather">
+				<div id="cloud" class="floating"><span class="shadow"></span></div>
+				<div id="cloud" class="sun-cloud floating"><span class="shadow"></span></div>
+			</div>
 		</div>
 		<div class="screen autumn">
-			<img src="img/autumn.png" />
+			<img src="img/autumn.png" class="floating" />
 		</div>
 		<div class="screen winter">
-			<img src="img/winter.png" />
+			<img src="img/snow.png" class="floating" />
 		</div>
    </div>
 
@@ -40,6 +52,27 @@
 	
 	<script>
 		$('.screen.winter').snowfall({image :"img/flake.png", minSize: 10, maxSize:32,  minSpeed:1, maxSpeed:3});
+	</script>
+	
+	<script>
+		$(document).ready(function() {
+			$('.show-sunny').click(function() {
+				$('.screen').css('display', 'none');
+				$('.screen.spring').css('display', 'block');
+				$('.screen .cloudy-weather').css('display', 'none');
+			});
+			
+			$('.show-snow').click(function() {
+				$('.screen').css('display', 'none');
+				$('.screen.winter').css('display', 'block');
+				$('.screen .cloudy-weather').css('display', 'none');
+			});
+			$('.show-clouds').click(function() {
+				$('.screen').css('display', 'none');
+				$('.screen.spring').css('display', 'block');
+				$('.screen .cloudy-weather').css('display', 'block');
+			});
+		});	
 	</script>
   </body>
 </html>

@@ -1,10 +1,19 @@
 html, body {
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
 }
 body {
 	background-color: #719FD0;
 }
+/* Only for development */
+	.develop-buttons {
+		position: absolute;
+		top: 15vh;
+		left: 15vh;
+		z-index: 999;
+	}
+/* Development End */
 .main {
 	height: 100vh;
 }
@@ -26,26 +35,136 @@ body {
     background: linear-gradient(#86A9BF, #FFF); /* Standard syntax (must be last) */
 }
 .screen.autumn {
-	display: block;
+	display: none;
 	background: -webkit-linear-gradient(#FBFFCA, #FFF); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#FBFFCA, #FFF); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#FBFFCA, #FFF); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#FBFFCA, #FFF); /* Standard syntax (must be last) */
 }
 .screen.winter {
-	display: none;
+	display: block;
 	background: -webkit-linear-gradient(#86A9BF, #FFF); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#86A9BF, #FFF); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#86A9BF, #FFF); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#86A9BF, #FFF); /* Standard syntax (must be last) */
 }
 .screen img {
-	width: 100%;
+	width: 50%;
 	position: absolute;
-	bottom: 0;
-	left: 0;
+	left: 50%;
+	margin-left: -25%;
+	top: 50%;
+	margin-top: -25%;
 }
 
+/* Sun */
+.sun {
+    width: 13vw;
+    height: 13vw;
+    background: #ff0;
+    background: radial-gradient(ellipse at center, #f90 0%,#fc0 60%,#ff0 100%);
+    border-radius: 100%;
+    position: absolute;
+    top: 10%;
+    right: 20%;
+	box-shadow: 0 0 50px #ff0, 0 0 75px #ff0; 
+}
+/* Cloud */
+.cloudy-weather {
+	display: none;
+}
+#cloud {
+	width: 350px; height: 120px;
+	
+	background: #f2f9fe;
+	background: linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -webkit-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -moz-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -ms-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -o-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	opacity: 0.8;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+
+	margin: 120px auto 20px;
+	position: absolute;
+	left: 30%;
+	margin-left: -30px;
+	top: 60%;
+	margin-top: -170px;
+	z-index: 999;
+	position: absolute;
+}
+.sun-cloud {
+	left: 65%!important;
+    margin-left: -30px!important;
+    top: 50%!important;
+    margin-top: -220px!important;
+}
+#cloud:after, #cloud:before {
+	content: '';
+	position: absolute;
+	background: #f2f9fe;
+	z-index: -1
+}
+#cloud:after {
+	width: 100px; height: 100px;
+	top: -50px; left: 50px;
+	
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+}
+#cloud:before {
+	width: 180px; height: 180px;
+	top: -90px; right: 50px;
+	
+	border-radius: 200px;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+}
+.shadow {
+	width: 350px;
+	position: absolute; bottom: -10px; 
+	background: #000;
+	z-index: -1;
+	
+	box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+	
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+/* Floating effect */
+.floating{
+    float: left;
+    -webkit-animation-name: Floatingx;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-name: Floating;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+
+}
+
+@-webkit-keyframes Floatingx{
+    from {-webkit-transform:translate(0, 0px);}
+    65% {-webkit-transform:translate(0, 15px);}
+    to {-webkit-transform: translate(0, -0px);    }    
+}
+    
+@-moz-keyframes Floating{
+    from {-moz-transform:translate(0, 0px);}
+    65% {-moz-transform:translate(0, 15px);}
+    to {-moz-transform: translate(0, -0px);}    
+}
 /* Snowfall */
 .darkBg{background:#2d0f0f url(images/smashing.jpg) top center;background-repeat:no-repeat;}
 .lightBg{background : url(images/snow.jpg) #b1dde0 top center no-repeat;}
