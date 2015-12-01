@@ -20,6 +20,10 @@
   </head>
   <body>
    <div class="main col-md-12">
+		<div class="develop-location">
+			<h1 id="location"></h1>
+			<h3 id="weather"></h3>
+		</div>
 		<div class="develop-buttons">
 			<button class="show-sunny">Sunny</button>
 			<button class="show-snow">Snow</button>
@@ -49,7 +53,7 @@
     <script src="js/bootstrap.min.js"></script>
 	
 	<script src="js/snowfall.jquery.js"></script>
-	
+	<script src="js/weather.js"></script>
 	<script>
 		$('.screen.winter').snowfall({image :"img/flake.png", minSize: 10, maxSize:32,  minSpeed:1, maxSpeed:3});
 	</script>

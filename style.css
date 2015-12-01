@@ -7,6 +7,12 @@ body {
 	background-color: #719FD0;
 }
 /* Only for development */
+	.develop-location {
+		position: absolute;
+		top: 2vh;
+		left: 15vh;
+		z-index: 999;
+	}
 	.develop-buttons {
 		position: absolute;
 		top: 15vh;
